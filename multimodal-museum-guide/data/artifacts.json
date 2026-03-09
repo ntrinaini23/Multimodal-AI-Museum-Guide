@@ -1,0 +1,33 @@
+[
+{
+"id":"a1",
+"name":"Bronze Nataraja",
+"period":"Chola Dynasty",
+"description":"Nataraja is the cosmic dancing form of Lord Shiva symbolizing creation and destruction.",
+"image":"/static/images/nataraja.jpeg"
+},
+
+{
+"id":"a2",
+"name":"Egyptian Sarcophagus",
+"period":"Ancient Egypt",
+"description":"A decorated stone coffin used in ancient Egyptian burial rituals.",
+"image":"/static/images/sarcophagus.jpg"
+},
+
+{
+"id":"a3",
+"name":"Greek Marble Bust",
+"period":"Ancient Greece",
+"description":"Marble bust sculptures were used to represent philosophers and rulers.",
+"image":"/static/images/greek_bust.jpg"
+},
+
+{
+"id":"a4",
+"name":"Roman Coin",
+"period":"Roman Empire",
+"description":"Coins used in the Roman Empire often displayed emperors and important symbols.",
+"image":"/static/images/roman_coin.jpg"
+}
+]

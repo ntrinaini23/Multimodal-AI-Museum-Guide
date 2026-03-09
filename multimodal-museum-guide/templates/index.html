@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Artifacts</h2>
+
+<div class="row">
+
+{% for artifact in artifacts %}
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="{{artifact.image}}" class="card-img-top">
+
+<div class="card-body">
+
+<h5>{{artifact.name}}</h5>
+
+<p>{{artifact.period}}</p>
+
+<a href="/artifact/{{artifact.id}}" class="btn btn-primary">
+View Guide
+</a>
+
+</div>
+</div>
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

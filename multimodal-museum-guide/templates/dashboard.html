@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Artifacts</h2>
+
+<div class="grid">
+
+{% for artifact in artifacts %}
+
+<div class="card">
+
+<img src="{{artifact.image}}">
+
+<h3>{{artifact.name}}</h3>
+
+<p>{{artifact.period}}</p>
+
+<a href="{{ url_for('artifact', id=artifact.id) }}">
+<button>Explore</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

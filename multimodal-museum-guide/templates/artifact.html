@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="artifact-container">
+
+<h2>{{artifact.name}}</h2>
+
+<img class="artifact-image" src="{{artifact.image}}">
+
+<p class="artifact-description">
+{{artifact.description}}
+</p>
+
+<hr>
+
+<h3>Ask AI Guide</h3>
+
+<div id="chatbox"></div>
+
+<div class="chat-input">
+
+<input id="question" placeholder="Ask about this artifact">
+
+<button onclick="askAI()">Send</button>
+
+</div>
+
+</div>
+
+<script>
+
+async function askAI(){
+
+let question = document.getElementById("question").value;
+
+if(question.trim()==""){
+return;
+}
+
+let context = `{{artifact.description}}`;
+
+let response = await fetch("/ask",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+question:question,
+context:context
+})
+});
+
+let data = await response.json();
+
+let chatbox = document.getElementById("chatbox");
+
+chatbox.innerHTML += `<div class="user-msg"><b>You:</b> ${question}</div>`;
+
+chatbox.innerHTML += `<div class="ai-msg"><b>AI:</b> ${data.answer}</div>`;
+
+document.getElementById("question").value="";
+
+chatbox.scrollTop = chatbox.scrollHeight;
+
+}
+
+</script>
+
+{% endblock %}
